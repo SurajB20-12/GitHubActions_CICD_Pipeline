@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Multiplication Table</title>
+  </head>
+  <body>
+    <h2>Multiplication Table Generator</h2>
+
+    <form method="POST">
+      <input
+        type="number"
+        name="number"
+        placeholder="Enter a number"
+        required
+      />
+      <button type="submit">Generate</button>
+    </form>
+
+    {% if table %}
+    <h3>Table of {{ number }}</h3>
+    <ul>
+      {% for n, i, result in table %}
+      <li>{{ n }} × {{ i }} = {{ result }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
